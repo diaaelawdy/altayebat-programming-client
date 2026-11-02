@@ -33,11 +33,13 @@ export function BrandMark({ size = 40, className }: { size?: number; className?:
 export function Logo({ compact }: { compact?: boolean }) {
   const { t } = useI18n();
   return (
-    <Link to="/" className="flex shrink-0 items-center gap-2.5 sm:gap-3">
+    <Link to="/" className="flex min-w-0 items-center gap-2.5 sm:gap-3">
       <BrandMark size={compact ? 34 : 42} />
       {!compact && (
-        <span className="leading-tight">
-          <span className="block text-[17px] font-semibold tracking-tight">{t('app.name')}</span>
+        <span className="min-w-0 leading-tight">
+          <span className="block truncate text-[15px] font-semibold tracking-tight sm:text-[17px]">
+            {t('app.name')}
+          </span>
           <span className="text-subtle hidden text-xs sm:block">{t('nav.tagline')}</span>
         </span>
       )}

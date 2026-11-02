@@ -77,7 +77,7 @@ export function Header({ onSearch }: { onSearch: () => void }) {
 
         <button
           onClick={onSearch}
-          className="border-border bg-surface text-subtle hover:border-border-strong hover:text-muted ms-auto flex h-9 items-center gap-2 rounded-xl border px-3 text-sm transition-colors md:w-64"
+          className="border-border bg-surface text-subtle hover:border-border-strong hover:text-muted ms-auto flex h-9 shrink-0 items-center gap-2 rounded-xl border px-3 text-sm transition-colors md:w-44 lg:w-64"
           aria-label={t('nav.search')}
         >
           <Search size={16} />
