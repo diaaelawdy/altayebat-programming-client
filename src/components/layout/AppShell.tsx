@@ -11,6 +11,7 @@ import { useI18n } from '@/i18n';
 import { useMe, useMeQuery } from '@/features/auth/useMe';
 import { usePreferences } from '@/theme/PreferencesProvider';
 import { cn } from '@/lib/cn';
+import { OpenSource } from './OpenSource';
 
 export function AppShell() {
   const loc = useLocation();
@@ -82,6 +83,9 @@ function Footer() {
           {t('app.name')} · {t('app.tagline')}
         </span>
         <span>{t('home.stat.free')}</span>
+      </div>
+      <div className="mx-auto max-w-6xl px-4 pb-6">
+        <OpenSource />
       </div>
     </footer>
   );

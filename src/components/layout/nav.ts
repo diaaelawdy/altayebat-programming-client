@@ -21,6 +21,12 @@ const ADMIN_LINKS = [
   { to: '/admin/companies', key: 'nav.companiesAdmin', perm: 'companies.edit' },
   { to: '/admin/roles', key: 'nav.roles', perm: 'roles.manage' },
   { to: '/admin/assign', key: 'admin.roles.assign', perm: 'users.assign_roles' },
+  {
+    to: '/admin/role-requests',
+    key: 'nav.roleRequests',
+    perm: 'users.assign_roles',
+    count: 'roleRequests',
+  },
   { to: '/admin/users', key: 'nav.users', perm: 'users.view_private' },
   { to: '/admin/analytics', key: 'nav.analytics', perm: 'analytics.view' },
 ] as const;
@@ -39,6 +45,7 @@ export function useAdminLinks() {
         pendingCompanies: number | null;
         openReports: number | null;
         flaggedContent: number | null;
+        roleRequests: number | null;
       }>('/admin/counts'),
     enabled: links.some((l) => 'count' in l),
     refetchInterval: 120_000,

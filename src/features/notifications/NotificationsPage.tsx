@@ -22,6 +22,7 @@ function linkFor(n: Notification) {
   if (n.type === 'company.rejected') return '/me?tab=companies';
   if (n.type.startsWith('message.') && d.conversationId) return `/inbox/${d.conversationId}`;
   if (n.type === 'badge.awarded') return '/me';
+  if (n.type.startsWith('role.')) return '/request-role';
   return null;
 }
 

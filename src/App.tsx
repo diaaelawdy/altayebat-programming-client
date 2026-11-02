@@ -35,6 +35,11 @@ const HistoryPage = page(() => import('@/features/history/HistoryPage'), 'Histor
 const ReportsPage = page(() => import('@/features/admin/ReportsPage'), 'ReportsPage');
 const RolesPage = page(() => import('@/features/admin/RolesPage'), 'RolesPage');
 const AssignRolesPage = page(() => import('@/features/admin/AssignRolesPage'), 'AssignRolesPage');
+const RoleRequestsPage = page(
+  () => import('@/features/admin/RoleRequestsPage'),
+  'RoleRequestsPage',
+);
+const RequestRolePage = page(() => import('@/features/roles/RequestRolePage'), 'RequestRolePage');
 const AnalyticsPage = page(() => import('@/features/admin/AnalyticsPage'), 'AnalyticsPage');
 const UsersPage = page(() => import('@/features/admin/UsersPage'), 'UsersPage');
 const UserDetailPage = page(() => import('@/features/admin/UsersPage'), 'UserDetailPage');
@@ -64,6 +69,7 @@ const router = createBrowserRouter([
       { path: '/history', element: auth(<HistoryPage />) },
       { path: '/inbox/:id', element: auth(<InboxPage />) },
       { path: '/settings', element: <SettingsPage /> },
+      { path: '/request-role', element: auth(<RequestRolePage />) },
       {
         path: '/admin/review',
         element: (
@@ -101,6 +107,14 @@ const router = createBrowserRouter([
         element: (
           <RequirePermission any={['users.assign_roles', 'users.ban']}>
             <AssignRolesPage />
+          </RequirePermission>
+        ),
+      },
+      {
+        path: '/admin/role-requests',
+        element: (
+          <RequirePermission permission="users.assign_roles">
+            <RoleRequestsPage />
           </RequirePermission>
         ),
       },

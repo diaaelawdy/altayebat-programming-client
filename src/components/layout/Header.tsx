@@ -14,6 +14,7 @@ import {
   Shield,
   Sun,
   User,
+  UserCheck,
 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
@@ -269,6 +270,9 @@ function UserMenu({
             </Link>
             <Link to="/history" className={item} role="menuitem">
               <History size={16} /> {t('nav.history')}
+            </Link>
+            <Link to="/request-role" className={item} role="menuitem">
+              <UserCheck size={16} /> {t('nav.requestRole')}
             </Link>
             <Link to="/settings" className={item} role="menuitem">
               <Settings size={16} /> {t('nav.settings')}

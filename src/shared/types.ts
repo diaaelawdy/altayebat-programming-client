@@ -217,7 +217,7 @@ export interface Review {
 export interface HistoryEntry {
   id: string;
   action: string;
-  targetType: 'answer' | 'comment' | 'question' | 'company' | 'user' | 'role';
+  targetType: 'answer' | 'comment' | 'question' | 'company' | 'user' | 'role' | 'roleRequest';
   label: string;
   link: string;
   detail: string;

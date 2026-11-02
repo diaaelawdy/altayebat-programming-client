@@ -12,6 +12,7 @@ import { VoteButtons } from '@/features/threads/VoteButtons';
 import { PrivacyNotice } from '@/features/auth/PrivacyNotice';
 import { useMe } from '@/features/auth/useMe';
 import { cn } from '@/lib/cn';
+import { OpenSource } from '@/components/layout/OpenSource';
 
 export function SettingsPage() {
   const { t, locale, setLocale } = useI18n();
@@ -135,6 +136,11 @@ export function SettingsPage() {
           <Card className="space-y-4 p-6">
             <SectionTitle>{t('settings.privacy')}</SectionTitle>
             <PrivacyNotice />
+          </Card>
+
+          <Card className="space-y-4 p-6">
+            <SectionTitle>{t('oss.title')}</SectionTitle>
+            <OpenSource />
           </Card>
         </div>
 

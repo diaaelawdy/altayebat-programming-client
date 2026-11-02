@@ -36,5 +36,8 @@ export const keys = {
     user: (id: string) => ['admin', 'user', id] as const,
     companies: ['admin', 'companies'] as const,
     analytics: ['admin', 'analytics'] as const,
+    roleRequests: ['admin', 'role-requests'] as const,
   },
+  requestableRoles: ['roles', 'requestable'] as const,
+  myRoleRequests: ['me', 'role-requests'] as const,
 };

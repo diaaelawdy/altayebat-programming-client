@@ -61,6 +61,7 @@ src/
 - `RequirePermission` renders a 404 for routes the user lacks.
 - `/me` is refetched every 60 s and on window focus, so role changes apply without signing in again.
 - The server enforces the same rules (403) regardless of what the client shows.
+- Members ask for a role, with a reason, at `/request-role` (account menu). Staff with `users.assign_roles` handle requests at `/admin/role-requests`.
 
 ## Engagement & study features
 
@@ -113,3 +114,9 @@ src/
 - Proper roles: tablist, radiogroup, switch, dialog (with focus trap and Escape to close), combobox and listbox in the command palette.
 - `aria-live` on vote counts and toasts.
 - Logical CSS properties for RTL, and Latin digits in Arabic so code and counts read consistently.
+
+## Contributing
+
+Source: [mokabla-client](https://github.com/diaaelawdy/mokabla-client) · [mokabla-server](https://github.com/diaaelawdy/mokabla-server). Issues and pull requests are welcome.
+
+Please contribute from a separate GitHub account that doesn't reveal who you are. People share their real interviews here, and nobody should be traceable back to one.

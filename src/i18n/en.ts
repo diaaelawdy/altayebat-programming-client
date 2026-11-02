@@ -678,6 +678,37 @@ export const en = {
   'perm.users.ban': 'Ban and unban users',
   'perm.users.assign_roles': 'Assign roles',
   'perm.roles.manage': 'Manage roles',
+  'nav.requestRole': 'Request a role',
+  'nav.roleRequests': 'Role requests',
+  'notif.role.approved': 'Your request for the {role} role was approved 🎉',
+  'notif.role.rejected': 'Your request for the {role} role was not approved: {reason}',
+  'history.target.roleRequest': 'a role request',
+  'roleRequest.title': 'Request a role',
+  'roleRequest.subtitle':
+    'Want to help, for example by reviewing new companies and questions? Pick a role and tell the team why.',
+  'roleRequest.pick': 'Role',
+  'roleRequest.reason': 'Why do you want this role?',
+  'roleRequest.reasonHint': 'At least 10 characters. Only the team sees this.',
+  'roleRequest.submit': 'Send request',
+  'roleRequest.sent': 'Request sent',
+  'roleRequest.pendingNote':
+    'Your request is waiting for the team. You can send another one after it is handled.',
+  'roleRequest.none': 'There are no roles to request right now.',
+  'roleRequest.history': 'Your requests',
+  'roleRequest.noteLabel': 'Team note:',
+  'roleRequest.status.pending': 'Pending',
+  'roleRequest.status.approved': 'Approved',
+  'roleRequest.status.rejected': 'Rejected',
+  'roleRequests.subtitle': 'Members asking for a role. Approving gives them the role right away.',
+  'roleRequests.empty': 'No pending role requests.',
+  'roleRequests.note': 'Note to the member (optional)',
+  'oss.title': 'Open source',
+  'oss.text':
+    'This site is open source. Found a bug or want to improve something? Contribute on GitHub.',
+  'oss.client': 'Website code',
+  'oss.server': 'Server code',
+  'oss.anon':
+    'Please contribute from a separate account that doesn’t reveal who you are, so nobody can be linked to an interview they shared.',
 };
 
 export type MessageKey = keyof typeof en;
