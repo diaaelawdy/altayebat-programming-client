@@ -1,0 +1,30 @@
+/** Permission keys. Keep in sync with server/src/shared/permissions.ts. */
+export const PERMISSIONS = [
+  'questions.create',
+  'questions.review',
+  'questions.edit_any',
+  'questions.delete_any',
+  'answers.create',
+  'answers.vote',
+  'answers.delete_any',
+  'comments.create',
+  'comments.delete_any',
+  'ratings.create',
+  'ratings.delete_any',
+  'reports.review',
+  'moderation.view_reviewer',
+  'companies.submit',
+  'companies.review',
+  'companies.edit',
+  'companies.delete',
+  'users.view_private',
+  'users.ban',
+  'users.assign_roles',
+  'roles.manage',
+  'messages.team_inbox',
+  'messages.send_any',
+  'logs.view',
+  'analytics.view',
+] as const;
+
+export type Permission = (typeof PERMISSIONS)[number];

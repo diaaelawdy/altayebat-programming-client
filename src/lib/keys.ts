@@ -1,0 +1,40 @@
+/** Query-key factory: one place that defines cache identity for every resource. */
+export const keys = {
+  me: ['me'] as const,
+  meta: ['meta'] as const,
+  companies: (q: string, sort: string) => ['companies', { q, sort }] as const,
+  company: (slug: string) => ['company', slug] as const,
+  questions: (slug: string, filters: Record<string, string>) =>
+    ['questions', slug, filters] as const,
+  question: (slug: string, qslug: string, ctx: Record<string, string>) =>
+    ['question', slug, qslug, ctx] as const,
+  questionAll: ['question'] as const,
+  related: (id: string) => ['related', id] as const,
+  answers: (questionId: string, sort: string) => ['answers', questionId, sort] as const,
+  comments: (slug: string, sort: string) => ['comments', slug, sort] as const,
+  reviews: (slug: string, sort: string) => ['reviews', slug, sort] as const,
+  recent: ['recent'] as const,
+  daily: ['daily'] as const,
+  search: (q: string) => ['search', q] as const,
+  profile: (username: string) => ['profile', username] as const,
+  my: (
+    what: 'submissions' | 'answers' | 'companies' | 'bookmarks' | 'progress' | 'activity' | 'lists',
+  ) => ['my', what] as const,
+  list: (id: string) => ['my', 'list', id] as const,
+  notifications: ['notifications'] as const,
+  history: (scope: 'mine' | 'all') => ['history', scope] as const,
+  stacks: ['history', 'stacks'] as const,
+  messages: (box: 'mine' | 'team') => ['messages', box] as const,
+  conversation: (id: string) => ['messages', 'c', id] as const,
+  admin: {
+    counts: ['admin', 'counts'] as const,
+    review: ['admin', 'review'] as const,
+    companyReview: ['admin', 'company-review'] as const,
+    reports: ['admin', 'reports'] as const,
+    roles: ['admin', 'roles'] as const,
+    users: (params: Record<string, string | number>) => ['admin', 'users', params] as const,
+    user: (id: string) => ['admin', 'user', id] as const,
+    companies: ['admin', 'companies'] as const,
+    analytics: ['admin', 'analytics'] as const,
+  },
+};
